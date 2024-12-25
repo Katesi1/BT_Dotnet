@@ -3,32 +3,172 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Movie App</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/MvcMovie.styles.css" asp-append-version="true" />
+    <title>@ViewData["Title"] - ComputeZone</title>
+    <link data-stencil-stylesheet href="https://cdn11.bigcommerce.com/s-nwj2ghlf9b/stencil/fc9eb5e0-e29a-0135-beb1-525400dfdca6/e/75d5f3e0-2096-0136-a96f-525400dfdca6/vendor/animate.css" rel="stylesheet" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400%7CVidaloka:400%7CPoppins:400,300,500,600,700%7CRoboto:400,400i,300,300i,500,500i,700,700i%7CKaushan+Script:&display=swap" rel="stylesheet" asp-append-version="true">
+    <link data-stencil-stylesheet href="https://cdn11.bigcommerce.com/s-nwj2ghlf9b/stencil/fc9eb5e0-e29a-0135-beb1-525400dfdca6/e/75d5f3e0-2096-0136-a96f-525400dfdca6/css/theme-229851d0-e29b-0135-d115-525400dfdca6.css" rel="stylesheet" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400%7CVidaloka:400%7CPoppins:400,300,500,600,700%7CRoboto:400,400i,300,300i,500,500i,700,700i%7CKaushan+Script:&display=swap" rel="stylesheet" asp-append-version="true">
+    <script src="https://cdn11.bigcommerce.com/s-nwj2ghlf9b/stencil/fc9eb5e0-e29a-0135-beb1-525400dfdca6/e/75d5f3e0-2096-0136-a96f-525400dfdca6/modernizr-custom.js"></script>
+    <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W96S995');</script>
+        <!-- End Google Tag Manager -->
+
+        <!-- Start Tracking Code for analytics_facebook -->
+
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('set', 'autoConfig', 'false', '1612301249019465');
+    fbq('dataProcessingOptions', ['LDU'], 0, 0);
+    fbq('init', '1612301249019465', {"external_id":"8e2fe287-1eca-40a0-9675-555717fc6048"});
+    fbq('set', 'agent', 'bigcommerce', '1612301249019465');
+
+    function trackEvents() {
+        var pathName = window.location.pathname;
+
+        fbq('track', 'PageView', {}, {"eventID":"store-2-prd-us-central1-191638997640"});
+
+        // Search events start -- only fire if the shopper lands on the /search.php page
+        if (pathName.indexOf('/search.php') === 0 && getUrlParameter('search_query')) {
+            fbq('track', 'Search', {
+                content_type: 'product_group',
+                content_ids: [],
+                search_string: getUrlParameter('search_query')
+            });
+        }
+        // Search events end
+
+        // Wishlist events start -- only fire if the shopper attempts to add an item to their wishlist
+        if (pathName.indexOf('/wishlist.php') === 0 && getUrlParameter('added_product_id')) {
+            fbq('track', 'AddToWishlist', {
+                content_type: 'product_group',
+                content_ids: []
+            });
+        }
+        // Wishlist events end
+
+        // Lead events start -- only fire if the shopper subscribes to newsletter
+        if (pathName.indexOf('/subscribe.php') === 0 && getUrlParameter('result') === 'success') {
+            fbq('track', 'Lead', {});
+        }
+        // Lead events end
+
+        // Registration events start -- only fire if the shopper registers an account
+        if (pathName.indexOf('/login.php') === 0 && getUrlParameter('action') === 'account_created') {
+            fbq('track', 'CompleteRegistration', {}, "");
+        }
+        // Registration events end
+
+        
+
+        function getUrlParameter(name) {
+            var cleanName = name.replace(/[\[]/, '\[').replace(/[\]]/, '\]');
+            var regex = new RegExp('[\?&]' + cleanName + '=([^&#]*)');
+            var results = regex.exec(window.location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+    }
+
+    if (window.addEventListener) {
+        window.addEventListener("load", trackEvents, false)
+    }
+    </script>
+    <noscript><img height="1" width="1" style="display:none" alt="null" src="https://www.facebook.com/tr?id=1612301249019465&ev=PageView&noscript=1&a=plbigcommerce1.2&eid=store-2-prd-us-central1-191638997640"/></noscript>
+
+    <!-- End Tracking Code for analytics_facebook -->
+
+
+    <script type="text/javascript">
+    var BCData = {};
+    </script>
+    <!-- snippet location htmlhead -->
+    
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Movies" asp-action="Index">Movie App</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <header class="header header--fixed" role="banner">
+        <h1 class="header-logo header-logo--left">
+            <a asp-area="" asp-controller="Movies" asp-action="Index">
+            <span class="header-logo-text">Compute Zone</span>
+            </a>
+        </h1>       
+        <div class="navPages-container" id="menu" data-menu>
+            <nav class="navPages navPages--align-center">                 
+                <ul class="navPages-list">
+                    <li class="navPages-item">               
+                        <a class="navPages-action has-subMenu" href="" data-collapsible="navPages-111" data-collapsible-disabled-breakpoint="large" data-collapsible-disabled-state="open" data-collapsible-enabled-state="closed">Laptop<i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>  
+                    <div class="navPage-subMenu navPage-subMenu--mega2" id="navPages-111" aria-hidden="true" tabindex="-1">
+                        <ul class="navPage-subMenu-list">
+                            <li class="navPage-subMenu-item">
+                                <a class="navPage-subMenu-action navPages-action" href="">ALL Laptop</a>
+                            </li>
+                            <li class="navPage-subMenu-item">
+                                <a  class="navPage-subMenu-action navPages-action has-subMenu"
+                                    href=""
+                                    data-collapsible="navPages-115"
+                                    data-collapsible-disabled-breakpoint="medium"
+                                    data-collapsible-disabled-state="open"
+                                    data-collapsible-enabled-state="closed">
+                                    Laptop Ultrabook <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
+                                    </a>
+                                <ul class="navPage-childList" id="navPages-115">
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-flats/ballet-flats/">Ballet Flats </a>
+                                    </li>
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-flats/basic/">Basic </a>
+                                    </li>
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-flats/loafers/">Loafers </a>
+                                    </li>
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-flats/mary-janes/">Mary Janes </a>
+                                    </li>
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-flats/oxfords/">Oxfords </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navPage-subMenu-item">
+                                <a
+                                    class="navPage-subMenu-action navPages-action has-subMenu"
+                                    href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-shoes/"
+                                    data-collapsible="navPages-113"
+                                    data-collapsible-disabled-breakpoint="medium"
+                                    data-collapsible-disabled-state="open"
+                                    data-collapsible-enabled-state="closed">
+                                    Laptop Gaming <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
+                                    </a>
+                                <ul class="navPage-childList" id="navPages-113">
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-shoes/slippers/">Slippers </a>
+                                    </li>
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-shoes/womens-boots/">Women&#x27;s Boots </a>
+                                    </li>
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-shoes/womens-flats/">Women&#x27;s Flats </a>
+                                    </li>
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-shoes/womens-pumps/">Women&#x27;s Pumps </a>
+                                    </li>
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-shoes/womens-sandals/">Women&#x27;s Sandals </a>
+                                    </li>
+                                    <li class="navPage-childList-item">
+                                        <a class="navPage-childList-action navPages-action" href="https://parallaxbag-style3-demo.mybigcommerce.com/shoes/womens-shoes/womens-vulcanize-shoes/">Women&#x27;s Vulcanize Shoes </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    </li>  
+                </ul>
+            </nav>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -45,5 +185,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://cdn11.bigcommerce.com/s-nwj2ghlf9b/stencil/fc9eb5e0-e29a-0135-beb1-525400dfdca6/e/75d5f3e0-2096-0136-a96f-525400dfdca6/js/bundle.js"></script>
+    <script type="text/javascript" src="https://cdn11.bigcommerce.com/shared/js/csrf-protection-header-5eeddd5de78d98d146ef4fd71b2aedce4161903e.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@ using MvcMovie.Data;
 using MvcMovie.Models;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MvcMovieContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -12,7 +12,7 @@ builder.Services.AddControllersWithViews();
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddDbContext<MvcMovieContext>(options =>
-        options.UseSqlite(builder.Configuration.GetConnectionString("MvcMovieContext")));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("MvcMovieContext")));
 }
 else
 {
@@ -21,7 +21,7 @@ else
 }
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+using (var scope = app.Services.CreateScope()) //Run app thì sẽ chạy database luôn
 {    
     var db = scope.ServiceProvider.GetRequiredService<MvcMovieContext>();
     
@@ -34,7 +34,7 @@ using (var scope = app.Services.CreateScope())
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Home/Error"); // Báo lỗi trong môi trường production
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
